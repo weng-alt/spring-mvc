@@ -12,7 +12,7 @@ public class UserController {
 
     @GetMapping("hello")
     public String Hello(){
-        System.out.println("进来了");
+        System.out.println("进来了,lll");
         return "../hello.jsp";
     }
 }
