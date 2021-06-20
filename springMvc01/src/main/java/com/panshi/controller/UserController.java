@@ -1,18 +1,34 @@
 package com.panshi.controller;
 
+import com.panshi.pojo.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
-    @GetMapping("hello")
+    @GetMapping("/hello")
     public String Hello(){
         System.out.println("进来了,lll");
-        return "../hello.jsp";
+        return "hello";
     }
+
+    @GetMapping("/test1/{name}")
+    public String test1(@PathVariable String name){
+        System.out.println("test1进来了"+name);
+        return "hello";
+    }
+
+    @GetMapping("/test2")
+    public String test2(Student student){
+        System.out.println(student);
+        return "hello";
+    }
+
+
+
 }
