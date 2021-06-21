@@ -34,7 +34,6 @@ public class UserController {
         return "hello";
     }
 
-
     @PostMapping("/upload")
     @ResponseBody
     public String upload(HttpServletRequest req, MultipartFile file) {
