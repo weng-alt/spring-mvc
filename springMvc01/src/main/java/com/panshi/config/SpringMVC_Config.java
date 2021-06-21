@@ -1,4 +1,4 @@
-package com.panshi.common;
+package com.panshi.config;
 
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
@@ -15,12 +15,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 
-@Configuration
-@MapperScan("com.panshi.mapper")
+@Configuration//视该类为配置类
+@MapperScan("com.panshi.mapper")//扫描dao层
 @Import({JdbcConfig.class})
 @PropertySource("classpath:jdbcConfig.properties")
-@EnableTransactionManagement
-@EnableAspectJAutoProxy
+@EnableTransactionManagement//开启事务管理
+@EnableAspectJAutoProxy//开启AOP
 public class SpringMVC_Config {
 
     @Bean("transactionManager")
