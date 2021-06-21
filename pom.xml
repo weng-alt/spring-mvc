@@ -55,12 +55,6 @@
            <version>2.0.6</version>
        </dependency>
 
-       <dependency>
-           <groupId>com.alibaba</groupId>
-           <artifactId>fastjson</artifactId>
-           <version>1.2.75</version>
-       </dependency>
-
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>

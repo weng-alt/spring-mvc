@@ -1,6 +1,5 @@
 package com.panshi.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.panshi.pojo.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
