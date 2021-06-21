@@ -28,8 +28,8 @@ public class UserController {
         return "hello";
     }
 
-    @GetMapping("/test2")
-    public String test2(Student student) {
+    @PostMapping("/ajax")
+    public String ajax(@RequestBody Student student) {
         System.out.println(student);
         return "hello";
     }
