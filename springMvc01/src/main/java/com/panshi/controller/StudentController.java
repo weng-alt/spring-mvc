@@ -15,14 +15,13 @@ import java.util.List;
 import java.util.UUID;
 
 
-@Controller
+@RestController
 public class StudentController {
 
     @Autowired
     private StudentService service;
 
     @GetMapping("/test")
-    @ResponseBody
     public List<Student> ajax() {
         return service.test();
     }
