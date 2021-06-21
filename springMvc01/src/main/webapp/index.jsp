@@ -4,6 +4,7 @@
 <div id="d1">Hello World!</div>
 <form action="/user/upload" enctype="multipart/form-data" method="post">
     <input type="file" name="file" />
+    <input type="submit"/>
 </form>
 </body>
 <script type="text/javascript">
