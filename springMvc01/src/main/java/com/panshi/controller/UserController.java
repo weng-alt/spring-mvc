@@ -37,7 +37,6 @@ public class UserController {
 
 
     @PostMapping("/upload")
-    @ResponseBody
     public String upload(HttpServletRequest req, MultipartFile file) {
         String path = req.getServletContext().getRealPath("/uploads/");
         File f = new File(path);
@@ -48,6 +47,7 @@ public class UserController {
 
         fileName = uuid + "_" + fileName;
         System.out.println(path);
+        req.getSession().setAttribute("msg",fileName+"上传文件成功");
         try {
             file.transferTo(new File(path,fileName));
         } catch (IOException e) {

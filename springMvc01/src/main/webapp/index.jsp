@@ -2,6 +2,9 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <body>
 <div id="d1">Hello World!</div>
+<form action="/user/upload" enctype="multipart/form-data" method="post">
+    <input type="file" name="file" />
+</form>
 </body>
 <script type="text/javascript">
     $(function () {
