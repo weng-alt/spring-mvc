@@ -2,10 +2,7 @@ package com.panshi.controller;
 
 import com.panshi.pojo.Student;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -24,10 +21,9 @@ public class UserController {
         return "hello";
     }
 
-    @GetMapping(value = "/ajax",consumes = "application/json")
+    @PostMapping("/ajax")
     public String ajax(@RequestBody Student student){
         System.out.println(student);
-        System.out.println(1);
         return "hello";
     }
 
