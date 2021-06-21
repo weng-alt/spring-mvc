@@ -1,6 +1,7 @@
 package com.panshi.controller;
 
 import com.panshi.pojo.Student;
+import com.panshi.service.StudentService;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,13 +16,15 @@ import java.util.UUID;
 
 
 @Controller
-@RequestMapping("/user")
-public class UserController {
+public class StudentController {
 
-    @PostMapping("/ajax")
-    public String ajax(@RequestBody Student student) {
-        System.out.println(student);
-        return "hello";
+    @Autowired
+    private StudentService service;
+
+    @GetMapping("/test")
+    @ResponseBody
+    public List<Student> ajax() {
+        return service.test();
     }
 
     @PostMapping("/upload")
