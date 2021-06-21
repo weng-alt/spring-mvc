@@ -27,6 +27,7 @@ public class UserController {
     @GetMapping(value = "/ajax",consumes = "application/json")
     public String ajax(@RequestBody Student student){
         System.out.println(student);
+        System.out.println(1);
         return "hello";
     }
 
