@@ -53,7 +53,7 @@ public class UserController {
         } catch (IOException e) {
             System.err.println("上传文件失败");
         }
-        return "";
+        return "hello";
     }
 
 

@@ -1,5 +1,23 @@
 <html>
+<script type="text/javascript" src="js/jquery.js"></script>
 <body>
-<h2>Hello World!</h2>
+<div id="d1">Hello World!</div>
 </body>
+<script type="text/javascript">
+    $(function () {
+        $("#d1").click(function () {
+            let stuObj = {id: 1, name: "xxx", age: 20};
+            $.ajax({
+                url: "/user/ajax",
+                type: 'POST',
+                dataType: 'json',
+                contentType: "application/json",
+                data: JSON.stringify(stuObj),//转为json格式
+                success: function (data) {
+
+                }
+            });
+        });
+    })
+</script>
 </html>
