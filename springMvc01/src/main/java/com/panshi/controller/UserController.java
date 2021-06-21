@@ -4,6 +4,7 @@ import com.panshi.pojo.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -23,8 +24,8 @@ public class UserController {
         return "hello";
     }
 
-    @GetMapping("/test2")
-    public String test2(Student student){
+    @GetMapping(value = "/ajax",consumes = "application/json")
+    public String ajax(@RequestBody Student student){
         System.out.println(student);
         return "hello";
     }
