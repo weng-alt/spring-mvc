@@ -39,11 +39,10 @@ function query() {
             myTbody.empty();
             $.each(data,function (i,val) {
                 let tr=$("<tr></tr>");
-                let id = $("<td>"+val.id+"</td>");
-                let name = $("<td>"+val.name+"</td>");
-                let age = $("<td>"+val.age+"</td>");
-                let operating = $("<td></td>");
-                operating.append("<input type='button' id='del' value='删除'>" +
+                let id = $("<td></td>").append(val.id);
+                let name = $("<td></td>").append(val.name);
+                let age = $("<td></td>").append(val.age);
+                let operating = $("<td></td>").append("<input type='button' id='del' value='删除'>" +
                     "<input type='button' id='replace' value='修改'>");
                 tr.append(id,name,age,operating);
                 myTbody.append(tr);
