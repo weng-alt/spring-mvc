@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生系统</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+<div id="d1">
+    <button id="query">查询</button>
+    <form method="post" onsubmit="return false" id="myFrom">
+        <input type="hidden" name="id" value="">
+        名字: <input type="text" name="name">
+        年龄: <input type="text" name="age">
+        <input type="submit" value="新增" id="add">
+        <input type="submit" value="修改" id="upd" style="display: none">
+    </form>
+</div>
+<div id="d2">
+    <table>
+        <thead>
+            <th>id</th>
+            <th>名字</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </thead>
+        <tbody id="myTbody">
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 package com.panshi.service.impl;
 
+import com.panshi.entity.Student;
 import com.panshi.mapper.StudentMapper;
-import com.panshi.pojo.Student;
 import com.panshi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +12,21 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
-    private StudentMapper dao;
+    private StudentMapper studentMapper;
 
-    @Override
-    public List<Student> test() {
-        return dao.test();
+    public List<Student> query() {
+        return studentMapper.query();
+    }
+
+    public void insert(Student student) {
+        studentMapper.insert(student);
+    }
+
+    public void delete(int id) {
+        studentMapper.delete(id);
+    }
+
+    public void update(Student student) {
+        studentMapper.update(student);
     }
 }
