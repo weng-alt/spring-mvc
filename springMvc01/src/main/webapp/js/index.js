@@ -62,12 +62,12 @@ function add(){
         data:JSON.stringify(stu),
         contentType: "application/json",
         dataType:'json',
-        success:function (result) {
-            if (200==result.code){
-                alert(result.msg);
+        success:function (data) {
+            if (200==data.code){
+                alert(data.msg);
                 query();
             }else {
-                alert(result.msg);
+                alert(data.msg);
             }
 
         }
@@ -81,12 +81,12 @@ function del(id) {
         url:"/student/delete/"+id,
         type:'get',
         dataType:'json',
-        success:function (result) {
-            if (200==result.code){
-                alert(result.msg);
+        success:function (data) {
+            if (200==data.code){
+                alert(data.msg);
                 query();
             }else {
-                alert(result.msg);
+                alert(data.msg);
             }
 
         }
@@ -116,12 +116,12 @@ function upd() {
         data:JSON.stringify(stu),
         contentType: "application/json",
         dataType:'json',
-        success:function (result) {
-            if (200==result.code){
-                alert(result.msg);
+        success:function (data) {
+            if (200==data.code){
+                alert(data.msg);
                 query();
             }else {
-                alert(result.msg);
+                alert(data.msg);
             }
         }
     });
