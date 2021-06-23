@@ -1,49 +1,55 @@
 package com.panshi.controller;
 
-import com.panshi.pojo.Student;
+import com.panshi.entity.Msg;
+import com.panshi.entity.Student;
 import com.panshi.service.StudentService;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-import java.util.UUID;
-
 
 @RestController
+@RequestMapping("/student")
 public class StudentController {
-
     @Autowired
-    private StudentService service;
+    private StudentService studentService;
 
-    @GetMapping("/test")
-    public List<Student> ajax() {
-        return service.test();
+
+    @GetMapping("/query")
+    public List<Student> query() {
+        return studentService.query();
     }
 
-    @PostMapping("/upload")
-    public String upload(HttpServletRequest req, MultipartFile file) {
-        String path = req.getServletContext().getRealPath("/uploads/");
-        File f = new File(path);
-        if (!f.exists())
-            f.mkdirs();
-        String fileName = file.getOriginalFilename();
-        String uuid = UUID.randomUUID().toString().replace("-", "");
-
-        fileName = uuid + "_" + fileName;
-        System.out.println(path);
-        req.getSession().setAttribute("msg",fileName+"上传文件成功");
-        try {
-            file.transferTo(new File(path,fileName));
-        } catch (IOException e) {
-            System.err.println("上传文件失败");
+    @PostMapping("/insert")
+    public Msg insert(@RequestBody Student student) {
+        if (!"".equals(student.getName())&&0!=student.getAge()) {
+            try {
+                studentService.insert(student);
+                return Msg.init(200, "新增成功", null);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        return "hello";
+        return Msg.init(-200, "新增失败", null);
+    }
+
+    @GetMapping("/delete/{id}")
+    public Msg delete(@PathVariable int id) {
+        studentService.delete(id);
+        return Msg.init(200, "删除成功", null);
+    }
+
+    @PostMapping("/update")
+    public Msg update(@RequestBody Student student) {
+        if (student != null) {
+            try {
+                studentService.update(student);
+                return Msg.init(200, "修改成功", null);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return Msg.init(-200, "修改失败", null);
     }
 
 

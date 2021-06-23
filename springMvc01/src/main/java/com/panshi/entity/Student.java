@@ -1,6 +1,8 @@
-package com.panshi.pojo;
+package com.panshi.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor

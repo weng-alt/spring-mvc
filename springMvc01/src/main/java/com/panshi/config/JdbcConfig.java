@@ -1,3 +1,4 @@
+/*
 package com.panshi.config;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
@@ -33,3 +34,4 @@ public class JdbcConfig {
     }
 
 }
+*/
