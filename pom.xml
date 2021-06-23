@@ -98,6 +98,13 @@
             <version>2.12.0</version>
         </dependency>
         <!-- json end  -->
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.4.2</version>
+        </dependency>
+
     </dependencies>
 
 </project>
